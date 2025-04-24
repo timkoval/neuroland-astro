@@ -13,10 +13,10 @@ const { href, noStyling, notes } = Astro.props;
 const isExternal = href.startsWith("http");
 const linkColor = isExternal
 	? "var(--flexoki-magenta-600)"
-	: "var(--color-medium-sea-blue)";
+	: "var(--flexoki-cyan-400)";
 const hoverColor = isExternal
-	? "var(--color-dark-sea-blue)"
-	: "var(--color-crimson)";
+	? "var(--flexoki-magenta-400)"
+	: "var(--flexoki-cyan-600)";
 ---
 
 <Tooltip>

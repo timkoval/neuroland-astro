@@ -58,7 +58,7 @@ const { multiBirthCsv, firstTimeCsv } = Astro.props;
 	}
 
 	.daily-color {
-		background-color: var(--color-sea-blue);
+		background-color: var(--flexoki-150);
 	}
 
 	.cumulative-color {
@@ -197,7 +197,7 @@ const { multiBirthCsv, firstTimeCsv } = Astro.props;
 		<div class="tooltip-title">${readableLabel}${statusLabel}</div>
 		<div class="tooltip-item">
 			<span class="tooltip-label">Daily probability:</span>
-			<span class="tooltip-value" style="color: ${d.isPastDay ? "var(--flexoki-500)" : "var(--color-sea-blue)"}">
+			<span class="tooltip-value" style="color: ${d.isPastDay ? "var(--flexoki-500)" : "var(--flexoki-150)"}">
 				${(d.isPastDay ? d.onThisDay : d.adjustedOnThisDay !== undefined ? d.adjustedOnThisDay : d.onThisDay).toFixed(1)}%
 			</span>
 		</div>
@@ -468,7 +468,7 @@ const { multiBirthCsv, firstTimeCsv } = Astro.props;
 					.attr("x2", x(todayData.displayLabel) + x.bandwidth() / 2)
 					.attr("y1", 0)
 					.attr("y2", height)
-					.attr("stroke", "var(--color-salmon)")
+					.attr("stroke", "var(--flexoki-700)")
 					.attr("stroke-width", 2)
 					.attr("stroke-dasharray", "4,6")
 					.attr("stroke-linecap", "round");
@@ -538,9 +538,9 @@ const { multiBirthCsv, firstTimeCsv } = Astro.props;
 					return height - yLeft(Math.min(value, yLeftMax));
 				})
 				.attr("fill", (d) => {
-					if (d.isCurrentDay) return "var(--color-salmon)";
+					if (d.isCurrentDay) return "var(--flexoki-700)";
 					if (d.isPastDay) return "var(--flexoki-300)";
-					return "var(--color-sea-blue)";
+					return "var(--flexoki-150)";
 				})
 				.on("mouseover", function (event, d) {
 					showTooltip(event, d, pregnancyData);

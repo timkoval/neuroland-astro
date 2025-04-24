@@ -12,7 +12,7 @@ const { headings } = Astro.props;
 <div class="desktop-container">
 	<div class="title" id="desktop-toc-header">
 		<svg width="8" height="8">
-			<circle r="4" cx="4" cy="4" fill="var(--color-sea-blue)"></circle>
+			<circle r="4" cx="4" cy="4" fill="var(--flexoki-150)"></circle>
 		</svg>
 		<h4>Table of Contents</h4>
 		<Icon name="heroicons:chevron-up" size={18} class="arrow-icon" />
@@ -131,7 +131,7 @@ const { headings } = Astro.props;
 	}
 
 	.collapse-header .arrow-icon {
-		color: var(--color-sea-blue);
+		color: var(--flexoki-150);
 		transition: all 0.3s cubic-bezier(0.2, 1, 0.8, 1);
 	}
 
@@ -145,11 +145,11 @@ const { headings } = Astro.props;
 	}
 
 	.collapse-header:hover h4 {
-		color: var(--color-medium-sea-blue);
+		color: var(--flexoki-cyan-400);
 	}
 
 	.collapse-header:hover .arrow-icon {
-		fill: var(--color-medium-sea-blue);
+		fill: var(--flexoki-cyan-400);
 	}
 
 	.collapse-content {
@@ -200,11 +200,11 @@ const { headings } = Astro.props;
 	}
 
 	.toc-link:hover {
-		color: var(--color-medium-sea-blue);
+		color: var(--flexoki-cyan-400);
 	}
 
 	.toc-link.active {
-		color: var(--color-sea-blue);
+		color: var(--flexoki-150);
 		font-weight: 500;
 	}
 </style>

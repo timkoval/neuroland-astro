@@ -13,7 +13,7 @@ const initialTopicsCount = 6;
 	<div class="topics-container">
 		<div class="topic-label">
 			<span>Topics</span>
-			<svg width="2" height="14" fill="var(--color-sea-blue)">
+			<svg width="2" height="14" fill="var(--flexoki-150)">
 				<rect width="2" height="14"></rect>
 			</svg>
 		</div>
@@ -114,7 +114,7 @@ const initialTopicsCount = 6;
 		right: 8px;
 		top: 50%;
 		transform: translateY(-50%);
-		color: var(--flexoki-700);
+		color: var(--flexoki-800);
 		pointer-events: none;
 	}
 
@@ -123,7 +123,7 @@ const initialTopicsCount = 6;
 		padding-right: var(--space-l);
 		border-radius: var(--border-radius-base);
 		border: 1px solid var(--flexoki-300);
-		color: var(--flexoki-700);
+		color: var(--flexoki-800);
 		background-color: var(--flexoki-paper);
 		transition: all 0.3s ease-in-out;
 		appearance: none;
@@ -165,7 +165,7 @@ const initialTopicsCount = 6;
 	.topic-label {
 		display: flex;
 		padding: var(--space-3xs) var(--space-2xs) var(--space-3xs) 0;
-		color: var(--color-black);
+		color: var(--flexoki-800);
 		text-transform: uppercase;
 		letter-spacing: 0.04rem;
 		margin-right: var(--space-3xs);
@@ -205,17 +205,17 @@ const initialTopicsCount = 6;
 	}
 
 	.topic-button:hover {
-		background-color: var(--color-tinted-cream);
-		color: var(--color-black);
+		background-color: var(--flexoki-200);
+		color: var(--flexoki-800);
 	}
 
 	.topic-button.selected {
-		background-color: var(--color-sea-blue);
+		background-color: var(--flexoki-150);
 		color: white;
 	}
 
 	.topic-button.selected:hover {
-		background-color: var(--color-medium-sea-blue);
+		background-color: var(--flexoki-cyan-400);
 	}
 
 	.toggle-topics {
@@ -223,14 +223,14 @@ const initialTopicsCount = 6;
 		margin: 0;
 		padding: var(--space-3xs) var(--space-2xs);
 		border-radius: var(--border-radius-base);
-		color: var(--flexoki-700);
+		color: var(--flexoki-800);
 		transition: all 0.4s ease;
 		line-height: 1.2;
 		margin-top: var(--space-3xs);
 		font-size: calc(var(--font-size-xs) / 1.2);
 		text-transform: uppercase;
 		letter-spacing: 0.04rem;
-		color: var(--color-crimson);
+		color: var(--flexoki-cyan-600);
 		border: none;
 		background: none;
 	}

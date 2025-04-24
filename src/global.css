@@ -15,28 +15,6 @@
   --space-128: 8rem;
   --space-160: 10rem;
 
-  /* Colors */
-  --color-light-cream: #fcfbf7;
-  --flexoki-paper: #f6f5f1;
-  --color-tinted-cream: #e6e3e1;
-  --color-black: #353534;
-  --flexoki-800: #4a4a46;
-  --flexoki-600: #73706d;
-  --flexoki-500: #8e8f94;
-  --flexoki-400: #afb0b6;
-  --flexoki-300: #d3d3d1;
-  --flexoki-200: #e3e3e0;
-  --flexoki-100: #e9e9e7;
-  --flexoki-magenta-600: #960462;
-  --color-crimson: #5f023e;
-  --color-sea-blue: #04a5bb;
-  --color-medium-sea-blue: #008ba3;
-  --color-dark-sea-blue: #00758f;
-  --color-purple: #7558b2;
-  --color-salmon: #fd8370;
-  --color-light-salmon: #ffd09c;
-  --color-dark-salmon: #e1624f;
-
   /* Flexoki */
   --flexoki-black: #100f0f;
   --flexoki-paper: #fffcf0;
@@ -496,7 +474,7 @@ iframe {
 body {
   background: var(--flexoki-paper);
   padding: var(--space-base);
-  color: var(--color-black);
+  color: var(--flexoki-800);
 }
 
 h1,
@@ -555,7 +533,7 @@ ol {
 
 a {
   text-decoration: none;
-  color: var(--color-crimson);
+  color: var(--flexoki-cyan-600);
 }
 
 code {
@@ -613,14 +591,14 @@ span.metadata {
 }
 
 button {
-  background-color: var(---color-salmon);
+  background-color: var(---flexoki-700);
   border: none;
   border-radius: var(---border-radius-sm);
   padding: var(--space-12) var(--space-24);
 }
 
 mark {
-  background-color: var(--color-light-salmon);
+  background-color: var(--flexoki-yellow-100);
 }
 
 .visually-hidden {
@@ -643,5 +621,5 @@ mark {
 }
 
 .blue {
-  color: var(--color-medium-sea-blue);
+  color: var(--flexoki-cyan-400);
 }
