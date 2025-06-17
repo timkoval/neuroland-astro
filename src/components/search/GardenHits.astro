@@ -5,7 +5,7 @@ import NoteCard from "../cards/NoteCard.astro";
 import PatternCard from "../cards/PatternCard.astro";
 import PodcastCard from "../cards/PodcastCard.astro";
 import TalkCard from "../cards/TalkCard.astro";
-import SmidgeonCard from "../cards/SmidgeonCard.astro";
+import ChronicleCard from "../cards/ChronicleCard.astro";
 
 interface Post {
 	id: string;
@@ -107,8 +107,8 @@ const sortedPosts = allPostData.sort((a: Post, b: Post) => {
 								conferences={post.data.conferences}
 							/>
 						)}
-						{post.data.type === "smidgeon" && post.data.title && (
-							<SmidgeonCard {...commonProps} title={post.data.title} />
+						{post.data.type === "chronicle" && post.data.title && (
+							<ChronicleCard {...commonProps} title={post.data.title} />
 						)}
 					</div>
 				);

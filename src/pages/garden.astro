@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Title2 from "../components/mdx/typography/Title2.astro";
+import TitleWithCount from "../components/layouts/TitleWithCount.astro";
+import GardenFiltersAndHits from "../components/search/GardenFiltersAndHits.astro";
+import PageWrapper from "../components/layouts/PageWrapper.astro";
+
+// Get all content collections
+const projects = await getCollection("projects", ({ data }) => !data.draft);
+const notes = await getCollection("notes", ({ data }) => !data.draft);
+const chronicles = await getCollection("chronicles", ({ data }) => !data.draft);
+
+// Combine all content into one array
+const allPosts = [
+	...projects,
+	...notes,
+	...chronicles,
+];
+---
+
+<Layout title="The Garden of Tim Koval">
+	<PageWrapper>
+		<header style="margin-bottom: var(--space-xl);">
+			<TitleWithCount posts={allPosts}>The Garden</TitleWithCount>
+			<Title2>
+				A digital garden is a dynamic space where I cultivate evolving notes, projects, and insights, fostering continuous growth and development
+			</Title2>
+		</header>
+		<GardenFiltersAndHits allPostData={allPosts} />
+	</PageWrapper>
+</Layout>

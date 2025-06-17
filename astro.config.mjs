@@ -8,7 +8,7 @@ import { remarkWikiLink } from "./src/plugins/remark-wiki-link";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://maggieappleton.com",
+  site: "https://timkoval.rs",
   image: {
     domains: ["res.cloudinary.com"],
   },

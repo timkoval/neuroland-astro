@@ -6,25 +6,25 @@ import WebMentions from "../components/layouts/WebMentions.astro";
 import Topics from "../components/layouts/Topics.astro";
 
 type Props = {
-	frontmatter: CollectionEntry<"smidgeons">["data"];
+	frontmatter: CollectionEntry<"chronicles">["data"];
 };
 
 const { frontmatter } = Astro.props;
 const currentSlug = Astro.url.pathname.replace(/^\/|\/$/g, "");
 ---
 
-<Layout title={frontmatter.title} type="smidgeon">
+<Layout title={frontmatter.title} type="chronicle">
 	<header class="header-section">
 		<div class="above-title">
 			<div class="back-link">
-				<a href="/smidgeons">
+				<a href="/chronicles">
 					<Icon name="heroicons:arrow-left" size={16} />
-					<span>Back to Smidgeons</span>
+					<span>Back to Life Chronicles</span>
 				</a>
 			</div>
 		</div>
 
-		<div class="smidgeon-layout">
+		<div class="chronicle-layout">
 			<div class="metadata">
 				<div class="date-permalink">
 					<time datetime={frontmatter.startDate.toISOString()}>
@@ -103,7 +103,7 @@ const currentSlug = Astro.url.pathname.replace(/^\/|\/$/g, "");
 		margin: var(--space-l) auto 0;
 	}
 
-	.smidgeon-layout {
+	.chronicle-layout {
 		display: grid;
 		grid-template-columns: 200px minmax(0, 800px);
 		gap: var(--space-l);
@@ -255,7 +255,7 @@ const currentSlug = Astro.url.pathname.replace(/^\/|\/$/g, "");
 	}
 
 	@media (max-width: 768px) {
-		.smidgeon-layout {
+		.chronicle-layout {
 			grid-template-columns: 1fr;
 			gap: var(--space-s);
 		}
