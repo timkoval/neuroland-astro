@@ -7,7 +7,7 @@ import type { APIRoute } from "astro";
 const styles = {
   title: {
     fontSize: "88px",
-    fontFamily: "Canela Deck",
+    fontFamily: "Source Serif 4",
     fontWeight: "bold",
     width: "100%",
     color: "#353534",
@@ -16,7 +16,7 @@ const styles = {
   },
   description: {
     fontSize: "36px",
-    fontFamily: "Canela Text",
+    fontFamily: "Source Serif 4",
     fontWeight: "normal",
     width: "100%",
     color: "#4a4a46",
@@ -25,7 +25,7 @@ const styles = {
   },
   eyebrow: {
     fontSize: "16px",
-    fontFamily: "Lato",
+    fontFamily: "Inter",
     textTransform: "uppercase",
     color: "#5f023e",
     letterSpacing: "0.05em",
@@ -63,16 +63,23 @@ export const GET: APIRoute = async function get({ request }) {
   const title = url.searchParams.get("title") || "Tim Koval";
   const description =
     url.searchParams.get("description") ||
-    "A digital garden filled with visual essays on programming, design, and anthropology";
+    "A digital garden is a dynamic space where I cultivate evolving notes, projects, and insights, fostering continuous growth and development";
 
   // Load the fonts
-  const CanelaDeck = await fs.readFile(
-    "./public/fonts/CanelaDeck-Regular.woff",
-  );
-  const CanelaText = await fs.readFile("./public/fonts/CanelaText-Light.woff");
-  const LatoRegular = await (
-    await fetch("https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf")
-  ).arrayBuffer();
+  // const SourceSerif4 = await (
+  //   await fetch("https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf")
+  // ).arrayBuffer();
+  // const Inter = await (
+  //   await fetch("https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf")
+  // ).arrayBuffer();
+  const SourceSerif4 = await fs.readFile("./public/fonts/source-serif-4-v13-latin-ext-regular.ttf");
+  const Inter = await fs.readFile("./public/fonts/inter-v19-latin-ext-regular.ttf");
+  // const SourceSerif4 = await fs.readFile(
+  //   "https://fonts.gstatic.com/s/sourceserif4/v13/vEFI2_tTDB4M7-auWDN0ahZJW1gV8te1Xb7GlMo.woff2",
+  // );
+  // const Inter = await (
+  //   await fetch("https://fonts.gstatic.com/s/inter/v19/UcCo3FwrK3iLTcvsYwYZ8UA3J58.woff2")
+  // ).arrayBuffer();
 
   // Load and process the garden cover image
   const {
@@ -135,7 +142,7 @@ export const GET: APIRoute = async function get({ request }) {
                             type: "p",
                             props: {
                               style: styles.eyebrow,
-                              children: "essays, notes, and design patterns",
+                              children: "projects, notes, and chronicles",
                             },
                           },
                         ],
@@ -199,7 +206,7 @@ export const GET: APIRoute = async function get({ request }) {
                 type: "p",
                 props: {
                   style: {
-                    fontFamily: "Canela Text",
+                    fontFamily: "Source Serif 4",
                     fontSize: "22px",
                     color: "#4a4a46",
                   },
@@ -260,26 +267,20 @@ export const GET: APIRoute = async function get({ request }) {
       ],
     },
   };
-
+ 
   const svg = await satori(content, {
     width: 1200,
     height: 630,
     fonts: [
       {
-        name: "Canela Deck",
-        data: CanelaDeck,
+        name: "Source Serif 4",
+        data: SourceSerif4,
         weight: 400,
         style: "normal",
       },
       {
-        name: "Canela Text",
-        data: CanelaText,
-        weight: 300,
-        style: "normal",
-      },
-      {
-        name: "Lato",
-        data: LatoRegular,
+        name: "Inter",
+        data: Inter,
         weight: 400,
         style: "normal",
       },

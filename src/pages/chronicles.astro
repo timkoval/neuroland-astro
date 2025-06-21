@@ -138,7 +138,7 @@ const renderedChronicles = await Promise.all(
 									</ProseWrapper>
 								</div>
 							</article>
-							{index !== renderedChronicle.length - 1 && (
+							{index !== renderedChronicles.length - 1 && (
 								<div class="chronicle-divider">
 									<Icon name="budding" size={20} />
 									<Icon name="budding" size={20} />
@@ -159,7 +159,7 @@ const renderedChronicles = await Promise.all(
 									<a href={`#chronicle-${recentChronicle.id}`}>
 										{recentChronicle.data.title.length > 40
 											? `${recentChronicle.data.title.slice(0, 40)}...`
-											: recentChonicle.data.title}
+											: recentChronicle.data.title}
 									</a>
 								</li>
 							))

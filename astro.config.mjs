@@ -9,6 +9,9 @@ import { remarkWikiLink } from "./src/plugins/remark-wiki-link";
 // https://astro.build/config
 export default defineConfig({
   site: "https://timkoval.rs",
+  build: {
+    format: "file",
+  },
   image: {
     domains: ["res.cloudinary.com"],
   },

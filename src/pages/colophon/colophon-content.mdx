@@ -8,67 +8,32 @@ import AssumedAudience from "../../components/mdx/AssumedAudience.astro";
 import ResourceBook from "../../components/mdx/ResourceBook.astro";
 import Alert from "../../components/mdx/Alert.astro";
 import Spacer from "../../components/mdx/Spacer.astro";
-import AddictionByDesign from "../../images/books/addiction.webp"
 
-I designed and built this site myself. Everything is open source and published on <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V3">Github</TooltipLink> if you'd like to poke around. The whole thing is frankly overengineered for a personal website, but playing with transient web technologies is an indulgent hobby I don't want to relinquish. I started building it in late 2021 and tinker on it regularly.
+I'm designing and growing this website myself, drawing inspiration from <TooltipLink href="https://maggieappleton.com/">Maggie Appleton's Digital Garden</TooltipLink> for it's structure, design and components. The source code is open source and available on <TooltipLink href="https://github.com/timkoval/neuroland">Github</TooltipLink> for you to explore. My blogging journey spans over a decade, during which I’ve experimented with more than five technologies, from WordPress in the mid-2010s to Gatsby, Jekyll, Quartz, and Sphinx. After trying various options, I’ve found Astro to be the ideal fit, blending Markdown simplicity with MDX’s customizable components to suit my needs.
 
 ### Technologies & Techniques
 
-<TooltipLink href="https://astro.build/">Astro</TooltipLink> does most of the heavy lifting – it's a static site builder designed for content-heavy websites. It does lots of useful things for me like typed collections, image optimisation, transition animations, and routing. It also minimises the amount of JavaScript shipped to the client using <TooltipLink href="https://docs.astro.build/en/concepts/islands/">islands architecture</TooltipLink>.
+ <TooltipLink href="https://astro.build/">Astro</TooltipLink> powers this site, enabling me to create everything from concise notes in Markdown to intricate, content-rich pages that push beyond standard Markdown limits. I value its content collection management, interface optimizations, and visual effects, along with its <TooltipLink href="https://docs.astro.build/en/concepts/islands/">islands architecture</TooltipLink> for modular JavaScript.
 
-I use plain HTML, CSS, and some JavaScript to build and design the interface. All the individual notes and essays are written in <TooltipLink href="https://github.com/mdx-js/mdx">MDX</TooltipLink> – a souped-up version of markdown that makes it easy to design and reuse custom components and interactive JavaScript elements. <TooltipLink href="https://vercel.com/">Vercel</TooltipLink> takes care of hosting. Animations are mostly CSS, with some more complex ones done in <TooltipLink href="https://motion.dev/">Motion</TooltipLink>.
+ I keep the interface lightweight using plain HTML, CSS, and JavaScript, while <TooltipLink href="https://github.com/mdx-js/mdx">MDX</TooltipLink> allows seamless text writing with interactive custom components. For animations, I primarily use CSS, following Maggie Appleton’s approach, with more complex effects crafted in <TooltipLink href="https://motion.dev/">Motion</TooltipLink>. 
 
-Previous versions of this website were built in <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com">Gatsby (v1)</TooltipLink> and <TooltipLink href="https://github.com/MaggieAppleton/maggieappleton.com-V2">Next.js (v2)</TooltipLink>, neither of which I would recommend. They're overkill for personal websites and introduce unnecessary complexity. I learned a lot building both, but if you're not making a dynamic web app with lots of user interaction, you don't need them. Static site generators like Astro, Eleventy, Hugo, and Jekyll are a better fit.
+ I host this site on a VPS via <TooltipLink href="https://www.hetzner.com/cloud/">Hetzner Cloud</TooltipLink>, appreciating its flexibility and cost-effectiveness for a fully customizable virtual machine.
 
 ### Writing and Editing Content
 
-My CMS is just a bunch of flat files and folders. When I edit content on here I'm just typing text into MDX files in VS Code. There's no fancy pipeline shuttling content directly from my personal knowledge management database (eg. <TooltipLink href="https://roamresearch.com">Roam</TooltipLink> or <TooltipLink href="https://tana.inc">Tana</TooltipLink>). All my ideas start and marinate in my Tana, but I wait for them to mature a bit before they move over to this garden.
-
-I know other people prefer setups where they can click one button and push content from personal notes to the web. I personally like having more control over how the material is displayed and laid out. Working directly in the native medium of the web – HTML, CSS, and JavaScript – gives me fine-grained control. It allows me to play with typography, illustrations, graphic design, videos, animations, and interactive elements that pure text pipelines can't support. Text isn't the only way to represent ideas.
+My CMS consists of flat files and folders, where I edit content directly in MDX files using Neovim. I use <TooltipLink href="https://obsidian.md/">Obsidian</TooltipLink>  for daily notetaking, nurturing my notes, ideas, and connections before they evolve into public content. Before publishing, I refine these in a code-like process, adding visual components, effects, animations, and non-Markdown elements to create engaging articles or detailed web pages, especially for [Innovations and Discoveries](/projects) and [Exploration Notes](/notes).
 
 ### Typography
 
-Headers are set in <TooltipLink href="https://commercialtype.com/catalog/canela/canela_deck">Canela Display</TooltipLink> and body copy is set in <TooltipLink href="https://commercialtype.com/catalog/canela/canela_text">Canela Text</TooltipLink>, both from <TooltipLink href="https://commercialtype.com/">Commercial Type</TooltipLink>. I love its semi-serifs and classical feel. Supporting sans-serif type is set in <TooltipLink href="https://fonts.google.com/specimen/Lato">Lato</TooltipLink>.
+Headers are set in <TooltipLink href="https://fonts.google.com/specimen/Source+Serif+4">Source Serif 4</TooltipLink>, and body text uses <TooltipLink href="https://fonts.google.com/specimen/Inter?query=inter">Inter</TooltipLink>, both open-source fonts that perfectly complement the academic and tech focus of my site. 
 
-I use a <TooltipLink href="https://utopia.fyi/blog/designing-with-fluid-type-scales">fluid type scale</TooltipLink> developed by <TooltipLink href="https://utopia.fyi/">Utopia</TooltipLink>, which uses some wild CSS calculations to continuously adjust the font size relative to your browser's width.
+I implement a <TooltipLink href="https://utopia.fyi/blog/designing-with-fluid-type-scales">fluid type scale</TooltipLink> from <TooltipLink href="https://utopia.fyi/">Utopia</TooltipLink>, leveraging advanced CSS calculations to adjust font sizes dynamically based on browser width.
 
 ### Growth Stages
 
-Every post on this site has a **growth stage** indicating how complete and comprehensive it is. They start as <Icon name="seedling" size="20px" /> seedlings, grow into <Icon name="budding" size="20px" /> buddings, and finally end up as <Icon name="evergreen" size="20px" /> evergreens. You'll often find notes and essays that are unfinished or in progress. In an ideal world I'd finish everything I started. But we don't live there and I'm notoriously bad at leaving things half baked. I do cycle back though. Sometimes months or years later. What goes around comes around.
+Each post here features a **growth stage**, reflecting its development level—starting as <Icon name="seedling" size="20px" /> seedlings, progressing to <Icon name="budding" size="20px" />  buddings, and maturing into <Icon name="evergreen" size="20px" /> evergreens. You’ll find many notes and articles in progress, as I aim to complete them over time, though some remain half-baked until I revisit and deepen them.
 
 ### Custom Components
 
-I've built a number of reusable custom components for various situations.
+I build on Maggie Appleton’s custom components as a foundation, adapting and creating my own to enhance my content with unique interactivity and design.
 
-There's the _coming soon_ component that signals a post is half-written and needs to be finished in the future:
-
-<ComingSoon />
-
-<Spacer size="xs" />
-
-There's an _assumed audience_ component that I put at the top of some posts to make explicit who I'm writing for:
-
-<AssumedAudience>
-  People who care about how websites are built.
-</AssumedAudience>
-
-<Spacer size="xs" />
-
-I occasionally need to _alert_ readers to dangers and threats:
-
-<Alert title="This is an alert">
-  Stay vigiliant to the threat of typography that is too small and low contrast to read.
-</Alert>
-
-<Spacer size="xs" />
-
-Some are nicely styled callouts for books:
-
-<ResourceBook
-  url="https://www.librarything.com/work/9697447"
-  title="Addiction By Design"
-  image={AddictionByDesign}
-  author="Natasha Dow Schull"
->
-  Addiction by Design takes readers into the intriguing world of machine gambling, an increasingly popular and absorbing form of play that blurs the line between human and machine, compulsion and control, risk and reward.
-</ResourceBook>

@@ -19,7 +19,7 @@ export async function getStaticPaths() {
   }[] = [];
 
   // Projects
-  essays.forEach((entry) => {
+  projects.forEach((entry) => {
     paths.push({
       params: { slug: entry.id },
       props: { entry, type: "project" },
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   });
 
   // Chronicles
-  talks.forEach((entry) => {
+  chronicles.forEach((entry) => {
     paths.push({
       params: { slug: entry.id },
       props: { entry, type: "chronicle" },
@@ -90,7 +90,7 @@ export const GET: APIRoute = async function get({ props, request }) {
   }
 
   // Adjust font size based on title length
-  if (props.type === "essay") {
+  if (props.type === "project") {
     if (title.length > 40) {
       titleFontSize = "68px";
     } else if (title.length < 32) {
@@ -112,7 +112,7 @@ export const GET: APIRoute = async function get({ props, request }) {
   let imageWidth = 400;
   let imageHeight = 400;
 
-  if (props.type === "essay" && "cover" in entry.data && entry.data.cover?.src) {
+  if (props.type === "project" && "cover" in entry.data && entry.data.cover?.src) {
     try {
       const { base64, width, height } = await getImageData(entry.data.cover.src);
 
@@ -138,7 +138,7 @@ export const GET: APIRoute = async function get({ props, request }) {
   const styles = {
     title: {
       fontSize: titleFontSize,
-      fontFamily: "Canela Deck",
+      fontFamily: "Source Serif 4",
       fontWeight: "bold",
       width: "100%",
       color: "#353534",
@@ -147,7 +147,7 @@ export const GET: APIRoute = async function get({ props, request }) {
     },
     description: {
       fontSize: type === "essay" ? "30px" : "36px",
-      fontFamily: "Canela Text",
+      fontFamily: "Inter",
       fontWeight: "normal",
       width: "100%",
       color: "#4a4a46",
@@ -156,7 +156,7 @@ export const GET: APIRoute = async function get({ props, request }) {
     },
     eyebrow: {
       fontSize: "16px",
-      fontFamily: "Lato",
+      fontFamily: "Inter",
       textTransform: "uppercase",
       color: "#5f023e",
       letterSpacing: "0.05em",
@@ -173,14 +173,16 @@ export const GET: APIRoute = async function get({ props, request }) {
     },
   };
 
-  // Load the Canela font
-  const CanelaDeck = await fs.readFile("./public/fonts/CanelaDeck-Regular.woff");
-  const CanelaText = await fs.readFile("./public/fonts/CanelaText-Light.woff");
+  // Load the fonts
+    const SourceSerif4 = await fs.readFile("./public/fonts/SourceSerif4-VariableFont_opsz,wght.ttf");
+    const Inter = await fs.readFile("./public/fonts/Inter-VariableFont_opsz,wght.ttf");
 
-  // Load Lato fonts by fetching the actual font files
-  const LatoRegular = await (
-    await fetch("https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHvxk.ttf")
-  ).arrayBuffer();
+  // const SourceSerif4 = await (
+  //   await fetch("https://fonts.gstatic.com/s/sourceserif4/v13/vEFI2_tTDB4M7-auWDN0ahZJW1gV8te1Xb7GlMo.woff2")
+  // ).arrayBuffer();
+  // const Inter = await (
+  //   await fetch("https://fonts.gstatic.com/s/inter/v19/UcCo3FwrK3iLTcvsYwYZ8UA3J58.woff2")
+  // ).arrayBuffer();
 
   // Load the content
   const content = {
@@ -337,7 +339,7 @@ export const GET: APIRoute = async function get({ props, request }) {
                 type: "p",
                 props: {
                   style: {
-                    fontFamily: "Canela Text",
+                    fontFamily: "Inter",
                     fontSize: "20px",
                     color: "#4a4a46",
                   },
@@ -404,20 +406,14 @@ export const GET: APIRoute = async function get({ props, request }) {
     height: 630,
     fonts: [
       {
-        name: "Canela Deck",
-        data: CanelaDeck,
+        name: "Source Serif 4",
+        data: SourceSerif4,
         weight: 400,
         style: "normal",
       },
       {
-        name: "Canela Text",
-        data: CanelaText,
-        weight: 400,
-        style: "normal",
-      },
-      {
-        name: "Lato",
-        data: LatoRegular,
+        name: "Inter",
+        data: Inter,
         weight: 400,
         style: "normal",
       },
