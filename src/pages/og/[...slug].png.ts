@@ -104,7 +104,7 @@ export const GET: APIRoute = async function get({ props, request }) {
   let displayDescription = description;
   if (props.type === "now") {
     displayDescription =
-      "A sporadically updated log of what I'm reading, exploring, and thinking about";
+      "A space to share stories and reflections from my tech-driven life, blending personal growth with innovative pursuits";
   }
 
   // Handle cover image

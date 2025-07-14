@@ -1,0 +1,17 @@
+---
+const { chart } = Astro.props;
+---
+
+<div id="mermaid-container" data-chart={chart}></div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    mermaid.initialize({ startOnLoad: false });
+    const container = document.getElementById('mermaid-container');
+    const chart = container.dataset.chart;
+    mermaid.render('mermaid-graph', chart).then(({ svg }) => {
+      container.innerHTML = svg;
+    });
+  });
+</script>

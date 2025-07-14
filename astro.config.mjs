@@ -12,6 +12,13 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  vite: {
+    ssr: {
+      noExternal: [
+        "mermaid",
+      ],
+    },
+  },
   image: {
     domains: ["res.cloudinary.com"],
   },
