@@ -10,6 +10,7 @@ growthStage: "seedling"
 
 import { Image } from 'astro:assets';
 import aiCollaborationCover from '../../images/covers/ai-collaboration-cover.png'; // Adjust path to your image
+import Mermaid from '../../components/mdx/Mermaid.astro';
 
 <Image
   src={aiCollaborationCover}
@@ -44,32 +45,22 @@ import Callout from '../../components/mdx/Callout.astro';
 
 To embed this project-focused mindset, K-12 education in STEM fields must evolve progressively, integrating AI as an everyday collaborator while building skills like computational thinking and teamwork from an early age. This step-by-step approach ensures a smooth transition, avoiding overwhelm and cultivating adaptability.
 
-import Accordion from '../../components/mdx/Accordion.astro';
+<div class="p-4">
+  <h4 class="font-semibold mb-2">Elementary Level (Ages 5-10)</h4>
+  <p>The foundation is laid through playful, exploratory activities that introduce AI without overwhelming technicality. Children might use simple interfaces to generate art or stories based on prompts, learning basic concepts like how AI recognizes patterns in data. In STEM, this could involve AI tools for visualizing shapes in math or simulating animal habitats in science, replacing early memorization with hands-on curiosity. The goal is to spark interest, emphasizing fun over formality, and teaching initial ethical ideas, such as fairness in AI suggestions.</p>
+</div>
 
-<Accordion>
-  <details>
-    <summary>Elementary Level (Ages 5-10)</summary>
-    <div class="p-4">
-      The foundation is laid through playful, exploratory activities that introduce AI without overwhelming technicality. Children might use simple interfaces to generate art or stories based on prompts, learning basic concepts like how AI recognizes patterns in data. In STEM, this could involve AI tools for visualizing shapes in math or simulating animal habitats in science, replacing early memorization with hands-on curiosity. The goal is to spark interest, emphasizing fun over formality, and teaching initial ethical ideas, such as fairness in AI suggestions.
-    </div>
-  </details>
-  <details>
-    <summary>Middle School (Ages 11-13)</summary>
-    <div class="p-4">
-      The progression introduces structured applications, blending AI with core STEM subjects. Students learn algorithmic problem-solving, using AI to break down tasks like optimizing routes in geography or analyzing data trends in biology. Projects become group-oriented, such as designing virtual experiments where AI handles simulations, and teams critique results for accuracy. This stage shifts from individual drills to collaborative iteration, incorporating personalized learning paths where AI adapts content to a student's pace, freeing teachers to mentor rather than lecture.
-    </div>
-  </details>
-  <details>
-    <summary>High School (Ages 14-18)</summary>
-    <div class="p-4">
-      Education deepens into interdisciplinary, real-world projects. In physics or math, teens might use AI for chaos theory models or particle simulations, then debate societal implications like algorithmic bias in climate predictions. Cross-curricular ties are key: A project could combine engineering with ethics, using AI to prototype sustainable devices while evaluating environmental impacts. Assessments evolve to portfolios, highlighting process skills like refining AI outputs or resolving team conflicts.
-    </div>
-  </details>
-</Accordion>
+<div class="p-4">
+  <h4 class="font-semibold mb-2">Middle School (Ages 11-13)</h4>
+  <p>The progression introduces structured applications, blending AI with core STEM subjects. Students learn algorithmic problem-solving, using AI to break down tasks like optimizing routes in geography or analyzing data trends in biology. Projects become group-oriented, such as designing virtual experiments where AI handles simulations, and teams critique results for accuracy. This stage shifts from individual drills to collaborative iteration, incorporating personalized learning paths where AI adapts content to a student's pace, freeing teachers to mentor rather than lecture.</p>
+</div>
+
+<div class="p-4">
+  <h4 class="font-semibold mb-2">High School (Ages 14-18)</h4>
+  <p>Education deepens into interdisciplinary, real-world projects. In physics or math, teens might use AI for chaos theory models or particle simulations, then debate societal implications like algorithmic bias in climate predictions. Cross-curricular ties are key: A project could combine engineering with ethics, using AI to prototype sustainable devices while evaluating environmental impacts. Assessments evolve to portfolios, highlighting process skills like refining AI outputs or resolving team conflicts.</p>
+</div>
 
 This phased integration addresses equity, providing tools for diverse learners and underserved areas, while teachers transition to facilitators. Programs like AI bootcamps for educators ensure implementation, resulting in higher engagement and better preparation for university-level collaboration.
-
-import Mermaid from '../../components/mdx/Mermaid.astro';
 
 <Mermaid chart={`
   graph TD
@@ -90,10 +81,27 @@ MCQ-based assessments are replaced by formative, continuous feedback loops, wher
 
 Overall, these changes make evaluations more dynamic and fair, aligning with industry needs for adaptive thinkers rather than fact-reciters, and drawing from reforms like those piloted by educational organizations emphasizing project outcomes.
 
-<figure class="my-6">
-  <img src="/images/evaluation-infographic.svg" alt="Diagram showing evolution from traditional exams to project-based assessments" />
-  <figcaption>Evolution of assessment methods in the AI era.</figcaption>
-</figure>
+<Mermaid chart={`
+  %%{init: { 'flowchart': { 'subGraphTitleMargin': { 'top': 10, 'bottom': 15 }, 'htmlLabels': false, 'wrap': false } }}%%
+  flowchart LR
+    subgraph TA["Traditional Assessments"]
+        A["SAT and Standardized Tests"] --> B["Multiple-Choice Questions (MCQs)"]
+        B --> C["Emphasis on Timed Recall and Rote Memorization"]
+        C --> D["Vulnerable to AI Assistance and Cheating"]
+    end
+
+    subgraph EA["Evolved Assessments\n in AI Era"]
+        E["Portfolio-Based Submissions"] --> F["AI-Enhanced Interviews and Challenges"]
+        F --> G["Formative Continuous Feedback Loops"]
+        G --> H["Rubrics Scoring: Innovation, Teamwork, Ethical Reasoning, Real-World Impact"]
+        H --> I["Holistic Measures: Prompt Engineering, Adaptability, Critical Evaluation"]
+    end
+
+    TA -->|Evolution| EA
+
+    style TA fill:#f9f,stroke:#333,stroke-width:2px
+    style EA fill:#dff,stroke:#333,stroke-width:2px
+`} />
 
 ## Transforming Higher Education: Bachelor's and Master's Programs Centered on Projects, Outcomes, and Interdisciplinary Teams
 
@@ -111,6 +119,9 @@ Overall, both bachelor's and master's stages promote hybrid intelligence, with i
 
 AI's integration flattens hierarchies and fluidifies roles in the tech industry, shifting from rigid structures to project-oriented networks where humans oversee AI's execution. Traditional positions adapt, emphasizing synergy over solo expertise.
 
+import LatexTable from '../../components/mdx/LatexTable.astro';
+
+<LatexTable>
 | Traditional Role | Evolved Role | Key Functions |
 |------------------|--------------|---------------|
 | Engineer        | AI-Augmented Engineer | Validate AI designs, add human intuition |
@@ -118,13 +129,24 @@ AI's integration flattens hierarchies and fluidifies roles in the tech industry,
 | CEO             | Chief Innovation Steward | Balance profit with societal impact |
 | CTO             | Chief AI Architect | Strategize ecosystem integration |
 | Architect       | Hybrid Systems Designer | Blueprint modular AI-human frameworks |
+</LatexTable>
+
 
 New roles emerge, such as "AI Ethicists" for algorithmic fairness, "Data Curators" for training sets in scientific modeling, and "Prompt Strategists" for optimizing AI interactions in collaborative projects. Distribution leans toward 60/40 technical-to-administrative, with gig-based specialists hopping initiatives. This demands education that instills AI literacy, ethical frameworks, and adaptability from the start.
 
-<figure class="my-6">
-  <img src="/images/role-distribution-infographic.svg" alt="Pie chart illustrating future tech role distribution" />
-  <figcaption>Projected shift in industry roles due to AI.</figcaption>
-</figure>
+<Mermaid chart={`
+  pie
+    title Tech Role Distribution in AI Era
+    "AI-Augmented Engineers" : 30
+    "Collaboration Orchestrators" : 15
+    "Chief Innovation Stewards" : 10
+    "Chief AI Architects" : 10
+    "Hybrid Systems Designers" : 10
+    "AI Ethicists" : 5
+    "Data Curators" : 5
+    "Prompt Strategists" : 5
+    "Administrative Roles" : 10
+`} />
 
 ## The Product Pivot: From Low-Impact Profit Chasers to High-Value, Problem-Solving Innovations
 

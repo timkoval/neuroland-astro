@@ -1,17 +1,31 @@
 ---
-const { chart } = Astro.props;
+const { chart, id = `mermaid-${Math.random().toString(36).slice(2)}` } = Astro.props;
 ---
 
-<div id="mermaid-container" data-chart={chart}></div>
+<div id={id} data-chart={chart} class="text-center my-4"></div>
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
+<script define:vars={{ id }}>
   document.addEventListener('DOMContentLoaded', () => {
     mermaid.initialize({ startOnLoad: false });
-    const container = document.getElementById('mermaid-container');
+    const container = document.getElementById(id);
     const chart = container.dataset.chart;
-    mermaid.render('mermaid-graph', chart).then(({ svg }) => {
+    mermaid.render(`${id}-graph`, chart).then(({ svg }) => {
       container.innerHTML = svg;
+      const svgElement = container.querySelector('svg');
+      if (svgElement) {
+        svgElement.style.height = 'auto';
+        svgElement.style.margin = '0 auto';
+        svgElement.style.display = 'block';
+      }
     });
   });
 </script>
+
+<style define:vars={{ id }}>
+  #${id} {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+</style>

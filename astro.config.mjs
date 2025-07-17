@@ -29,6 +29,8 @@ export default defineConfig({
         theme: "night-owl",
         wrap: true,
       },
+      extendMarkdownConfig: true, // Inherit Markdown settings, including GFM
+      gfm: true, //
     }),
     // partytown({
     //   config: {

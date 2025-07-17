@@ -1,0 +1,42 @@
+---
+interface Props {
+  children: any;
+}
+const { children } = Astro.props;
+---
+
+<div class="latex-table-wrapper">
+  <table>
+    <slot />
+  </table>
+</div>
+
+<style is:global>
+  .latex-table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .latex-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+    border-top: 0.4pt solid black; /* Top rule like booktabs \toprule */
+    border-bottom: 0.4pt solid black; /* Bottom rule like \bottomrule */
+  }
+  .latex-table-wrapper th, .latex-table-wrapper td {
+    padding: 0.5em 1em;
+    text-align: left;
+    border: none; /* No vertical lines, LaTeX booktabs style */
+  }
+  .latex-table-wrapper thead th {
+    border-bottom: 0.4pt solid black; /* Midrule like \midrule */
+    font-weight: bold;
+  }
+  .latex-table-wrapper tbody tr:not(:last-child) {
+    border-bottom: 0.05em solid #ddd; /* Light horizontal lines like \cmidrule */
+  }
+  .latex-table-wrapper tbody tr:hover {
+    background-color: #f8f8f8; /* Optional hover for interactivity */
+  }
+</style>
