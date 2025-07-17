@@ -8,17 +8,9 @@ topics: ["AI", "Education", "Collaboration"]
 growthStage: "seedling"
 ---
 
-import { Image } from 'astro:assets';
-import aiCollaborationCover from '../../images/covers/ai-collaboration-cover.png'; // Adjust path to your image
+import { BasicImage } from '../../components/mdx/BasicImage.astro'
 import Mermaid from '../../components/mdx/Mermaid.astro';
 
-<Image
-  src={aiCollaborationCover}
-  alt="AI and human hands building a digital structure together"
-  width={800}
-  height={450}
-  class="rounded-lg shadow-md mb-6"
-/>
 
 In an era dominated by artificial intelligence (AI), where systems like large language models excel at factual recall and data processing, the foundations of education and the technology industry are undergoing a profound transformation. This shift moves away from rote memorization and isolated knowledge toward collaborative projects, ethical innovation, and interdisciplinary discovery. AI's capabilities challenge outdated systems, making it essential to rethink how we learn, assess, and create value. This essay elaborates on these changes, drawing on emerging trends to outline a future where humans and AI partner effectively. From redefining knowledge in schools to evolving industry roles and products, the emphasis is on leveraging uniquely human traits like creativity, empathy, and curiosity to drive meaningful progress.
 
@@ -45,20 +37,17 @@ import Callout from '../../components/mdx/Callout.astro';
 
 To embed this project-focused mindset, K-12 education in STEM fields must evolve progressively, integrating AI as an everyday collaborator while building skills like computational thinking and teamwork from an early age. This step-by-step approach ensures a smooth transition, avoiding overwhelm and cultivating adaptability.
 
-<div class="p-4">
-  <h4 class="font-semibold mb-2">Elementary Level (Ages 5-10)</h4>
-  <p>The foundation is laid through playful, exploratory activities that introduce AI without overwhelming technicality. Children might use simple interfaces to generate art or stories based on prompts, learning basic concepts like how AI recognizes patterns in data. In STEM, this could involve AI tools for visualizing shapes in math or simulating animal habitats in science, replacing early memorization with hands-on curiosity. The goal is to spark interest, emphasizing fun over formality, and teaching initial ethical ideas, such as fairness in AI suggestions.</p>
-</div>
+#### Elementary Level (Ages 5-10)
 
-<div class="p-4">
-  <h4 class="font-semibold mb-2">Middle School (Ages 11-13)</h4>
-  <p>The progression introduces structured applications, blending AI with core STEM subjects. Students learn algorithmic problem-solving, using AI to break down tasks like optimizing routes in geography or analyzing data trends in biology. Projects become group-oriented, such as designing virtual experiments where AI handles simulations, and teams critique results for accuracy. This stage shifts from individual drills to collaborative iteration, incorporating personalized learning paths where AI adapts content to a student's pace, freeing teachers to mentor rather than lecture.</p>
-</div>
+The foundation is laid through playful, exploratory activities that introduce AI without overwhelming technicality. Children might use simple interfaces to generate art or stories based on prompts, learning basic concepts like how AI recognizes patterns in data. In STEM, this could involve AI tools for visualizing shapes in math or simulating animal habitats in science, replacing early memorization with hands-on curiosity. The goal is to spark interest, emphasizing fun over formality, and teaching initial ethical ideas, such as fairness in AI suggestions.
 
-<div class="p-4">
-  <h4 class="font-semibold mb-2">High School (Ages 14-18)</h4>
-  <p>Education deepens into interdisciplinary, real-world projects. In physics or math, teens might use AI for chaos theory models or particle simulations, then debate societal implications like algorithmic bias in climate predictions. Cross-curricular ties are key: A project could combine engineering with ethics, using AI to prototype sustainable devices while evaluating environmental impacts. Assessments evolve to portfolios, highlighting process skills like refining AI outputs or resolving team conflicts.</p>
-</div>
+#### Middle School (Ages 11-13)
+
+The progression introduces structured applications, blending AI with core STEM subjects. Students learn algorithmic problem-solving, using AI to break down tasks like optimizing routes in geography or analyzing data trends in biology. Projects become group-oriented, such as designing virtual experiments where AI handles simulations, and teams critique results for accuracy. This stage shifts from individual drills to collaborative iteration, incorporating personalized learning paths where AI adapts content to a student's pace, freeing teachers to mentor rather than lecture.
+
+#### High School (Ages 14-18)
+
+Education deepens into interdisciplinary, real-world projects. In physics or math, teens might use AI for chaos theory models or particle simulations, then debate societal implications like algorithmic bias in climate predictions. Cross-curricular ties are key: A project could combine engineering with ethics, using AI to prototype sustainable devices while evaluating environmental impacts. Assessments evolve to portfolios, highlighting process skills like refining AI outputs or resolving team conflicts.
 
 This phased integration addresses equity, providing tools for diverse learners and underserved areas, while teachers transition to facilitators. Programs like AI bootcamps for educators ensure implementation, resulting in higher engagement and better preparation for university-level collaboration.
 
