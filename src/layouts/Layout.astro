@@ -17,7 +17,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 // Generate OG image URL
 const currentPath = Astro.url.pathname;
-const contentId = currentPath.split("/").filter(Boolean).join("/");
+const contentId = currentPath.split("/").filter(Boolean).join("/").replace(/\.html$/, "")
 
 // Use localhost URL in development, production URL otherwise
 const baseUrl = import.meta.env.DEV ? "http://localhost:4321" : Astro.site;
