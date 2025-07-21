@@ -16,7 +16,7 @@ const styles = {
   },
   description: {
     fontSize: "36px",
-    fontFamily: "Source Serif 4",
+    fontFamily: "Inter",
     fontWeight: "normal",
     width: "100%",
     color: "#4a4a46",

@@ -147,7 +147,7 @@
 
   /* Fonts */
   --font-serif: "Source Serif 4", serif;
-  --font-body: "Source Serif 4", serif;
+  --font-body: "Inter", sans-serif;
   --font-sans: "Inter", sans-serif;
 
   /* Leading */
@@ -504,7 +504,7 @@ h2 {
   font-size: calc(var(--font-size-xl) / 1.2);
   font-family: var(--font-serif);
   color: var(--flexoki-800);
-  font-weight: 100;
+  font-weight: 400;
   line-height: var(--leading-snug);
   margin: var(--space-xs) 0 var(--space-2xs);
   transition: all 0.3s ease-in-out;
