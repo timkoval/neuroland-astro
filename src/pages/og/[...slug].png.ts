@@ -147,7 +147,7 @@ export const GET: APIRoute = async function get({ props, request }) {
     },
     description: {
       fontSize: type === "essay" ? "30px" : "36px",
-      fontFamily: "Inter",
+      fontFamily: "Noto Sans",
       fontWeight: "normal",
       width: "100%",
       color: "#4a4a46",
@@ -156,7 +156,7 @@ export const GET: APIRoute = async function get({ props, request }) {
     },
     eyebrow: {
       fontSize: "16px",
-      fontFamily: "Inter",
+      fontFamily: "Noto Sans",
       textTransform: "uppercase",
       color: "#5f023e",
       letterSpacing: "0.05em",
@@ -175,7 +175,7 @@ export const GET: APIRoute = async function get({ props, request }) {
 
   // Load the fonts
   const SourceSerif4 = await fs.readFile("./public/fonts/source-serif-4-v13-latin-ext-regular.ttf");
-  const Inter = await fs.readFile("./public/fonts/inter-v19-latin-ext-regular.ttf");
+  const NotoSans = await fs.readFile("./public/fonts/noto-sans-v39-latin-ext-regular.ttf");
 
   // const SourceSerif4 = await (
   //   await fetch("https://fonts.gstatic.com/s/sourceserif4/v13/vEFI2_tTDB4M7-auWDN0ahZJW1gV8te1Xb7GlMo.woff2")
@@ -373,7 +373,7 @@ export const GET: APIRoute = async function get({ props, request }) {
                 type: "p",
                 props: {
                   style: {
-                    fontFamily: "Inter",
+                    fontFamily: "Noto Sans",
                     fontSize: "20px",
                     color: "#4a4a46",
                   },
@@ -535,8 +535,8 @@ export const GET: APIRoute = async function get({ props, request }) {
         style: "normal",
       },
       {
-        name: "Inter",
-        data: Inter,
+        name: "Noto Sans",
+        data: NotoSans,
         weight: 400,
         style: "normal",
       },
